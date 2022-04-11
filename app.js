@@ -1,18 +1,20 @@
 function counter() {
-  let n = 1;
-  let m = n;
-
-  return function () {
-    if (m < 10) {
-      console.log(m++);
-      b();
+  let n = [];
+  let m = 1;
+  function getArray() {
+    while (m <= 10) {
+      n.push(m);
+      m++;
     }
-  };
+    return n;
+  }
+  return getArray();
+}
+
+function getSum(arr, i) {
+  return i <= 0 ? arr.at(i) : arr.at(i) + getSum(arr, --i);
 }
 
 const b = counter();
-
-b();
-b();
-b();
-b();
+const sum = getSum(b, 1);
+console.log(sum);
