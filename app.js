@@ -12,9 +12,9 @@ function counter() {
 }
 
 function getSum(arr, i) {
-  return i <= 0 ? arr.at(i) : arr.at(i) + getSum(arr, --i);
+  return i <= 0 ? arr[i] : arr[i] + getSum(arr, --i);
 }
 
 const b = counter();
-const sum = getSum(b, 1);
+const sum = getSum(b, 5);
 console.log(sum);
